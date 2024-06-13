@@ -1,27 +1,5 @@
 
-# name: ci
-
-# on:
-#   push:
-#     branches:
-#       - master
-
-# jobs:
-    
-#   print-greeting:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#        - name: check out the code
-#          uses: actions/checkout@v2
-
-#        - name: print greeting
-#          run: echo "Welcome to my world"
-
-
-
-
-name: ci
+name: the job
 
 on:
   push:
@@ -55,6 +33,6 @@ jobs:
           run: |   
              docker build -t ${{ secrets.DOCKER_USERNAME }}/test-image:latest .
 
-        - name: Push the Docker image
-          run: |
+          run: 
              docker push ${{ secrets.DOCKER_USERNAME }}/test-image:latest
+             
