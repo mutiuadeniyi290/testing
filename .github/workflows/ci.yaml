@@ -8,7 +8,7 @@ on:
 
 jobs:
     
-  print-greeting:
+   print-greeting:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,6 +32,4 @@ jobs:
 
          run: |   
              docker build -t ${{ secrets.DOCKER_USERNAME }}/test-image:latest .
-
-         run: |
              docker push ${{ secrets.DOCKER_USERNAME }}/test-image:latest
