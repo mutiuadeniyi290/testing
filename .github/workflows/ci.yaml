@@ -2,34 +2,34 @@
 name: the job
 
 on:
-  push:
-    branches:
-      - master
+    push:
+        branches:
+            - master
 
 jobs:
-    
-   print-greeting:
+    print greeting:
+
     runs-on: ubuntu-latest
 
     steps:
-       - name: check out the code
-         uses: actions/checkout@v2
+        - name: "check out the code"
+            uses: actions/checkout@v2
 
-       - name: print greeting
-         run: echo "Welcome to my world"
+        - name: "print greeting"
+        run: echo "Welcome to my world"
 
-       - name: "login into docker hub account"
-         uses: docker/login-action@v3
-         with:
-           username: ${{ secrets.DOCKER_USERNAME }}
-           password: ${{ secrets.DOCKER_PASSWORD }}
+        - name: "login into docker hub account"
+            uses: docker/login-action@v3
+            with:
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
 
-       - name: Build our code image
-         env:
-             IMAGE_NAME: test-image
-             VERSION: 1
-             USERNAME: mutiuadeniyi290
+        - name: Build our code image
+            env:
+                IMAGE_NAME: test-image
+                VERSION: 1
+                USERNAME: mutiuadeniyi290
 
-         run: |   
-             docker build -t ${{ secrets.DOCKER_USERNAME }}/test-image:latest .
-             docker push ${{ secrets.DOCKER_USERNAME }}/test-image:latest
+            run: |   
+                docker build -t ${{ secrets.DOCKER_USERNAME }}/test-image:latest .
+                docker push ${{ secrets.DOCKER_USERNAME }}/test-image:latest
