@@ -19,14 +19,14 @@ jobs:
           with:
             username: ${{ secrets.DOCKER_USERNAME }}  
             PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
-        - name: build our code imae
+        - name: build our image
           env:
               IMAGE_NAME: testing
               VERSION: 1
               USERNAME: mutiuadeniyi290
           run: |
               docker build -t $USERNAME/$IMAGE_NAME:$VERSION .
-              Ddocker push $USERNAME/$IMAGE_NAME:$VERSION
+              docker push $USERNAME/$IMAGE_NAME:$VERSION
 
 
           
