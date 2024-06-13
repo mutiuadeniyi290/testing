@@ -30,9 +30,8 @@ jobs:
              VERSION: 1
              USERNAME: mutiuadeniyi290
 
-          run: |   
+         run: |   
              docker build -t ${{ secrets.DOCKER_USERNAME }}/test-image:latest .
 
-          run: 
+         run: |
              docker push ${{ secrets.DOCKER_USERNAME }}/test-image:latest
-             
