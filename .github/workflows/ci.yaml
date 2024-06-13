@@ -53,8 +53,8 @@ jobs:
              USERNAME: mutiuadeniyi290
 
           run: |   
-               docker build -t ${{ secrets.DOCKER_USERNAME }}/my-simple-html-app:latest .
+             docker build -t ${{ secrets.DOCKER_USERNAME }}/test-image:latest .
 
         - name: Push the Docker image
           run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/my-simple-html-app:latest
+             docker push ${{ secrets.DOCKER_USERNAME }}/test-image:latest
